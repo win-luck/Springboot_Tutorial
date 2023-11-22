@@ -57,6 +57,7 @@ public class MemberService {
     public void update(Long memberId, MemberDto memberDto) {
         Member member = memberRepository.findById(memberId).orElseThrow(() -> new CustomException(ResponseCode.USER_NOT_FOUND));
         member.update(memberDto.getName(), memberDto.getEmail());
+        memberRepository.save(member);
     }
 
     /**
