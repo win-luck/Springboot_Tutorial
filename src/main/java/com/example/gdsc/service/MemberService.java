@@ -98,4 +98,11 @@ public class MemberService {
         Member member = memberRepository.findById(memberId).orElseThrow(() -> new CustomException(ResponseCode.USER_NOT_FOUND));
         return MemberDto.from(member);
     }
+
+    /**
+     * 회원 삭제
+     */
+    public void delete(Long memberId) {
+        memberRepository.deleteById(memberId);
+    }
 }
