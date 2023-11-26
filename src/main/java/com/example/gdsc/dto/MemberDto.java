@@ -22,4 +22,11 @@ public class MemberDto {
         memberDto.email = member.getEmail();
         return memberDto;
     }
+
+    public static MemberDto of(String name, String email) {
+        MemberDto memberDto = new MemberDto();
+        memberDto.name = name;
+        memberDto.email = email;
+        return memberDto;
+    }
 }
